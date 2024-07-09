@@ -73,6 +73,32 @@ main {
   grid-row: 2/3;
 }
 
+#content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  height: 100%;
+}
+
+.board {
+  width: clamp(300px, 30vw, 40vw);
+  height: clamp(300px, 30vw, 40vw);
+
+  justify-self: center;
+  align-self: center;
+
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+}
+
+.content-left {
+  grid-column: 1/2;
+}
+
+.content-right {
+  grid-column: 3/4;
+}
+
 footer {
   grid-column: 1/4;
   grid-row: 3/4;
