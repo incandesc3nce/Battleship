@@ -135,13 +135,20 @@ main {
   align-items: center;
 }
 
-.hit {
+.miss, .hit {
   border-radius: 50%;
 
   width: 50%;
   height: 50%;
+}
 
+.miss {
   background-color: #888888;
+  border: 4px solid #dbdbdb;
+}
+
+.hit {
+  background-color: #aa2f2f;
   border: 4px solid #dbdbdb;
 }
 
