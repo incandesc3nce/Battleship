@@ -3,9 +3,6 @@ import './index.html';
 import fillPlayerBoard from './modules/components/fillPlayerBoard.js';
 import fillOpponentBoard from './modules/components/fillOpponentBoard.js';
 import Gameboard from './modules/classes/Gameboard.js';
-import Player from './modules/classes/Player.js';
-import Cell from './modules/classes/Cell.js';
-import Ship from './modules/classes/Ship.js';
 import showPlayerShips from './modules/components/showPlayerShips.js';
 
 const board1 = document.querySelector('.board.board-left');
