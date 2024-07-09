@@ -40,7 +40,7 @@ h6 {
 
 :root {
   --header-color: #121435;
-  --main-color: #1E204A;
+  --main-color: #1e204a;
   --text-color: #ffffff;
 }
 
@@ -53,12 +53,12 @@ body {
 }
 
 header {
-  font-family: "Special Elite", 'Times New Roman', Times, serif;
+  font-family: "Special Elite", "Times New Roman", Times, serif;
   font-size: min(5vw, 1.8em);
-  
+
   background-color: var(--header-color);
   color: var(--text-color);
-  
+
   grid-column: 1/4;
 
   display: flex;
