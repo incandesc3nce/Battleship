@@ -153,6 +153,10 @@ main {
   border: 4px solid #dbdbdb;
 }
 
+.ship {
+  background-color: #4690fd;
+}
+
 footer {
   grid-row: 3/4;
 
