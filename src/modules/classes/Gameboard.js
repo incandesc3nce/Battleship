@@ -17,6 +17,8 @@ export default class Gameboard {
         for (let i = col; i <= span; i++) {
           this.playingField[row][i] = ship;
         }
+      } else {
+        throw new Error("Ship is out of bounds");
       }
     } else {
       const span = row + length - 1;
@@ -24,7 +26,11 @@ export default class Gameboard {
         for (let i = row; i <= span; i++) {
           this.playingField[i][col] = ship;
         }
+      } else {
+        throw new Error("Ship is out of bounds");
       }
     }
+
+    return true;
   }
 }
