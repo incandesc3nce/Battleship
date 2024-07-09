@@ -6,6 +6,7 @@ export default class Gameboard {
     this.playingField = Array.from({ length: n }, () =>
       Array.from({ length: n }, () => new Cell())
     );
+    this.amountOfShips = 0;
   }
 
   placeShip(length, row, col, isHorizontal) {
@@ -27,16 +28,17 @@ export default class Gameboard {
         this.playingField[row + i][col].ship = ship;
       }
     }
+
+    this.amountOfShips += 1;
   }
 
   receiveAttack(row, col) {
     const cell = this.playingField[row][col];
-    if (cell.isHit) {
-      return false;
-    }
+    if (cell.isHit) return false;
 
     if (cell.ship) {
       cell.ship.hit();
+      cell.ship.hasSunk ? this.amountOfShips -= 1 : null;
     }
 
     cell.isHit = true;
