@@ -10,4 +10,5 @@ export default function hitDetector(cell, i, gameboard) {
     hitElement.classList.add("miss");
     cell.appendChild(hitElement);
   }
+  cell.className = "cell";
 }

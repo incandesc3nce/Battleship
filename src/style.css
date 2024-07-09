@@ -107,17 +107,17 @@ main {
   width: 10%;
   height: 10%;
 
-  cursor: crosshair;
-
+  
   transition-duration: 0.2s;
-
+  
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.cell:hover {
+.enemy-cell:hover {
   background-color: #008000;
+  cursor: crosshair;
 }
 
 .player-tag {
@@ -140,6 +140,7 @@ main {
 
   width: 50%;
   height: 50%;
+  cursor: default;
 }
 
 .miss {
