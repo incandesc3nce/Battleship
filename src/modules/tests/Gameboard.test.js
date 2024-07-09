@@ -64,3 +64,9 @@ test('keeps track of ships', () => {
   gameboard.receiveAttack(2, 0);
   expect(gameboard.amountOfShips).toBe(1);
 })
+
+test("doesn't overlap ships vertically or horizontally", () => {
+  const gameboard = new Gameboard(3);
+  gameboard.placeShip(2, 0, 0, true);
+  expect(() => gameboard.placeShip(2, 0, 0, true)).toThrow();
+});
