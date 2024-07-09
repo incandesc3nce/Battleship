@@ -34,14 +34,16 @@ export default class Gameboard {
 
   receiveAttack(row, col) {
     const cell = this.playingField[row][col];
-    if (cell.isHit) return false;
+    if (cell.isHit) return null;
 
     if (cell.ship) {
       cell.ship.hit();
       cell.ship.hasSunk ? this.amountOfShips -= 1 : null;
+      cell.isHit = true;
+      return true;
     }
 
     cell.isHit = true;
-    return true;
+    return false;
   }
 }
