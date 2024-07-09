@@ -60,6 +60,24 @@ export default class Gameboard {
     return false;
   }
 
+  tryPlacingShip(length) {
+    const col = Math.floor(Math.random() * 10);
+    const row = Math.floor(Math.random() * 10);
+    const direction = Math.floor(Math.random() * 2);
+    try {
+      this.placeShip(length, col, row, direction);
+    } catch {
+      this.tryPlacingShip(length);
+    }
+  }
+  
+  randomizeShips() {
+    const ships = [5, 4, 3, 3, 2];
+    ships.forEach((length) => {
+      this.tryPlacingShip(length);
+    });
+  }
+
   allShipsSunk() {
     return this.amountOfShips === 0;
   }
