@@ -1,3 +1,5 @@
+import opponentsTurn from "../game/opponentsTurn.js";
+
 export default function hitDetector(cell, i, gameboard) {
   const row = Math.floor(i / 10);
   const col = i % 10;
@@ -11,4 +13,5 @@ export default function hitDetector(cell, i, gameboard) {
     cell.appendChild(hitElement);
   }
   cell.className = "cell";
+  opponentsTurn(gameboard);
 }
