@@ -1,6 +1,12 @@
 @font-face {
-  font-family: 'Special Elite';
-  src: url('../assets/fonts/SpecialElite/SpecialElite-Regular.ttf') format('truetype');
+  font-family: "Special Elite";
+  src: url("../assets/fonts/SpecialElite/SpecialElite-Regular.ttf")
+    format("truetype");
+}
+@font-face {
+  font-family: "Libre Baskerville";
+  src: url("../assets/fonts/LibreBaskerville/LibreBaskerville-Regular.ttf")
+    format("truetype");
 }
 
 * {
@@ -30,4 +36,59 @@ h6 {
 #root,
 #__next {
   isolation: isolate;
+}
+
+:root {
+  --header-color: #121435;
+  --main-color: #1E204A;
+  --text-color: #ffffff;
+}
+
+body {
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-rows: 0.5fr 5fr 0.5fr;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+header {
+  font-family: "Special Elite", 'Times New Roman', Times, serif;
+  font-size: min(5vw, 1.8em);
+  
+  background-color: var(--header-color);
+  color: var(--text-color);
+  
+  grid-column: 1/4;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: var(--main-color);
+
+  grid-column: 1/4;
+  grid-row: 2/3;
+}
+
+footer {
+  grid-column: 1/4;
+  grid-row: 3/4;
+
+  background-color: var(--header-color);
+  color: var(--text-color);
+
+  font-family: "Libre Baskerville", serif;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+footer a {
+  text-decoration: none;
+  color: #4690fd;
 }
