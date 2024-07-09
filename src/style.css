@@ -73,6 +73,7 @@ main {
 #content {
   display: grid;
   grid-template-columns: 1fr max(20vw, 300px) 1fr;
+  grid-template-rows: 0.8fr 0.1fr;
 
   height: 100%;
 }
@@ -133,6 +134,8 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  gap: 1em;
 }
 
 .miss, .hit {
@@ -177,7 +180,6 @@ dialog {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 1em;
 }
 
 dialog button {
@@ -195,6 +197,26 @@ dialog::backdrop {
   background-color: rgba(0, 0, 0, 0.5);
 
   backdrop-filter: blur(7px);
+}
+
+.button-container {
+  grid-column: 1/2;
+  grid-row: 2/3;
+
+  justify-self: center;
+}
+
+.reset-button {
+  font-family: "Libre Baskerville", "Times New Roman", Times, serif;
+  font-size: min(2vw, 1.5em);
+  padding: 0.2em 0.5em;
+  border-radius: 15px;
+  border: 0;
+
+  color: var(--text-color);
+  background-color: #4690fd;
+
+  cursor: pointer;
 }
 
 footer {
