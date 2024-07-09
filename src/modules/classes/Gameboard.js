@@ -34,7 +34,6 @@ export default class Gameboard {
 
   receiveAttack(row, col) {
     const cell = this.playingField[row][col];
-    if (cell.isHit) return null;
 
     if (cell.ship) {
       cell.ship.hit();
