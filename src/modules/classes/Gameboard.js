@@ -45,4 +45,8 @@ export default class Gameboard {
     cell.isHit = true;
     return false;
   }
+
+  allShipsSunk() {
+    return this.amountOfShips === 0;
+  }
 }

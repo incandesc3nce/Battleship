@@ -15,5 +15,5 @@ export default function opponentsTurn(gameboard) {
     missElement.classList.add("miss");
     cells[row * 10 + col].appendChild(missElement);
   }
-  
+  gameboard.allShipsSunk() ? alert("YOU LOSE!") : null;
 }

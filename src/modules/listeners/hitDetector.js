@@ -13,5 +13,6 @@ export default function hitDetector(cell, i, gameboard) {
     cell.appendChild(hitElement);
   }
   cell.className = "cell";
+  gameboard.allShipsSunk() ? alert("YOU WIN!") : null;
   opponentsTurn(gameboard);
 }
