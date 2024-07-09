@@ -24,3 +24,11 @@ test("places ships", () => {
     [new Ship(2), new Cell(), new Cell(), new Ship(1)],
   ]);
 });
+
+test("doesn't place ships outside of playing field", () => {
+  const gameboard = new Gameboard(4);
+
+  expect(() => gameboard.placeShip(3, 0, 3, true)).toThrow(
+    "Ship is out of bounds"
+  );
+});
