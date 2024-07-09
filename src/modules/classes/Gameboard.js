@@ -21,6 +21,20 @@ export default class Gameboard {
 
     if (isHorizontal) {
       for (let i = 0; i < length; i++) {
+        if (this.playingField[row][col + i].ship) {
+          throw new Error("Ship is horizontally overlapping");
+        }
+      }
+    } else {
+      for (let i = 0; i < length; i++) {
+        if (this.playingField[row + i][col].ship) {
+          throw new Error("Ship is vertically overlapping");
+        }
+      }
+    }
+
+    if (isHorizontal) {
+      for (let i = 0; i < length; i++) {
         this.playingField[row][col + i].ship = ship;
       }
     } else {
