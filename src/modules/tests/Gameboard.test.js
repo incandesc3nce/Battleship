@@ -31,6 +31,23 @@ test("places ships", () => {
 
 test("receives attack on empty cell", () => {
   const gameboard = new Gameboard(3);
+  gameboard.receiveAttack(0, 0);
+  expect(gameboard.playingField[0][0].isHit).toBeTruthy();
+});
 
-  expect().toBe();
+test("receives attack on cell with ship", () => {
+  const gameboard = new Gameboard(3);
+  gameboard.placeShip(3, 0, 1, true);
+  gameboard.receiveAttack(0, 1);
+  const shipCell = gameboard.playingField[0][1];
+  expect(shipCell.isHit && shipCell.ship.hits === 1).toBeTruthy();
+});
+
+test("sunks ship", () => {
+  const gameboard = new Gameboard(3);
+  gameboard.placeShip(2, 0, 0, true);
+  gameboard.receiveAttack(0, 0);
+  gameboard.receiveAttack(0, 1);
+  const ship = gameboard.playingField[0][0].ship;
+  expect(ship.hasSunk).toBeTruthy();
 });
