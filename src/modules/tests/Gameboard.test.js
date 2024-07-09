@@ -29,6 +29,11 @@ test("places ships", () => {
   ]);
 });
 
+test("doesn't place ships out of bounds", () => {
+  const gameboard = new Gameboard(3);
+  expect(() => gameboard.placeShip(4, 0, 0, true)).toThrow();
+});
+
 test("receives attack on empty cell", () => {
   const gameboard = new Gameboard(3);
   gameboard.receiveAttack(0, 0);
@@ -37,7 +42,7 @@ test("receives attack on empty cell", () => {
 
 test("receives attack on cell with ship", () => {
   const gameboard = new Gameboard(3);
-  gameboard.placeShip(3, 0, 1, true);
+  gameboard.placeShip(3, 0, 0, true);
   gameboard.receiveAttack(0, 1);
   const shipCell = gameboard.playingField[0][1];
   expect(shipCell.isHit && shipCell.ship.hits === 1).toBeTruthy();
