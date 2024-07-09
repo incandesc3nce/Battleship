@@ -8,7 +8,7 @@ export default function hitDetector(cell, i, gameboard) {
   if (madeHit) {
     hitElement.classList.add("hit");
     cell.appendChild(hitElement);
-  } else if (madeHit === false) {
+  } else {
     hitElement.classList.add("miss");
     cell.appendChild(hitElement);
   }
