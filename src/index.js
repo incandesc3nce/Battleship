@@ -16,6 +16,6 @@ gameboard1.randomizeShips();
 gameboard2.randomizeShips();
 
 fillPlayerBoard(board1, gameboard1);
-fillOpponentBoard(board2, gameboard2);
+fillOpponentBoard(board2, gameboard2, gameboard1);
 
 showPlayerShips(gameboard1);

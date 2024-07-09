@@ -61,11 +61,12 @@ export default class Gameboard {
   }
 
   tryPlacingShip(length) {
-    const col = Math.floor(Math.random() * 10);
     const row = Math.floor(Math.random() * 10);
-    const direction = Math.floor(Math.random() * 2);
+    const col = Math.floor(Math.random() * 10);
+    let direction = Math.floor(Math.random() * 2);
+    direction === 1 ? (direction = true) : (direction = false);
     try {
-      this.placeShip(length, col, row, direction);
+      this.placeShip(length, row, col, direction);
     } catch {
       this.tryPlacingShip(length);
     }
