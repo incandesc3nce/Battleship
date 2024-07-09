@@ -1,4 +1,5 @@
 import opponentsTurn from "../game/opponentsTurn.js";
+import showResetDialog from "../components/showResetDialog.js";
 
 export default function hitDetector(cell, i, gameboard, gameboard2) {
   const row = Math.floor(i / 10);
@@ -13,6 +14,6 @@ export default function hitDetector(cell, i, gameboard, gameboard2) {
     cell.appendChild(hitElement);
   }
   cell.className = "cell";
-  gameboard.allShipsSunk() ? alert("YOU WIN!") : null;
+  if (gameboard.allShipsSunk()) showResetDialog(true);
   opponentsTurn(gameboard2);
 }

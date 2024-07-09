@@ -1,7 +1,9 @@
+import showResetDialog from "../components/showResetDialog.js";
+
 export default function opponentsTurn(gameboard) {
   const row = Math.floor(Math.random() * 10);
   const col = Math.floor(Math.random() * 10);
-  const cells = document.querySelectorAll('.player-cell');
+  const cells = document.querySelectorAll(".player-cell");
   if (gameboard.playingField[row][col].isHit) {
     return opponentsTurn(gameboard);
   }
@@ -15,5 +17,5 @@ export default function opponentsTurn(gameboard) {
     missElement.classList.add("miss");
     cells[row * 10 + col].appendChild(missElement);
   }
-  gameboard.allShipsSunk() ? alert("YOU LOSE!") : null;
+  if (gameboard.allShipsSunk()) showResetDialog(false);
 }
