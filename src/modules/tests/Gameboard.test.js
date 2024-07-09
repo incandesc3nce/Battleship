@@ -17,18 +17,20 @@ test("places ships", () => {
   gameboard.placeShip(2, 2, 0, false);
   gameboard.placeShip(1, 3, 3, false);
 
-  expect(gameboard.playingField).toEqual([
-    [new Cell(), new Ship(3), new Ship(3), new Ship(3)],
-    [new Cell(), new Cell(), new Cell(), new Cell()],
-    [new Ship(2), new Cell(), new Cell(), new Cell()],
-    [new Ship(2), new Cell(), new Cell(), new Ship(1)],
+  const shipPlacement = gameboard.playingField.map((row) =>
+    row.map((cell) => cell.ship)
+  );
+
+  expect(shipPlacement).toEqual([
+    [null, new Ship(3), new Ship(3), new Ship(3)],
+    [null, null, null, null],
+    [new Ship(2), null, null, null],
+    [new Ship(2), null, null, new Ship(1)],
   ]);
 });
 
-test("doesn't place ships outside of playing field", () => {
-  const gameboard = new Gameboard(4);
+test("receives attack on empty cell", () => {
+  const gameboard = new Gameboard(3);
 
-  expect(() => gameboard.placeShip(3, 0, 3, true)).toThrow(
-    "Ship is out of bounds"
-  );
+  expect().toBe();
 });

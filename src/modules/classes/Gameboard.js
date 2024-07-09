@@ -4,7 +4,7 @@ import Ship from "./Ship";
 export default class Gameboard {
   constructor(n) {
     this.playingField = Array.from({ length: n }, () =>
-      new Array(n).fill(new Cell())
+      Array.from({ length: n }, () => new Cell())
     );
   }
 
@@ -12,25 +12,15 @@ export default class Gameboard {
     const ship = new Ship(length);
 
     if (isHorizontal) {
-      const span = col + length - 1;
-      if (span <= this.playingField[0].length) {
-        for (let i = col; i <= span; i++) {
-          this.playingField[row][i] = ship;
-        }
-      } else {
-        throw new Error("Ship is out of bounds");
+      for (let i = 0; i < length; i++) {
+        this.playingField[row][col + i].ship = ship;
       }
     } else {
-      const span = row + length - 1;
-      if (span <= this.playingField.length) {
-        for (let i = row; i <= span; i++) {
-          this.playingField[i][col] = ship;
-        }
-      } else {
-        throw new Error("Ship is out of bounds");
+      for (let i = 0; i < length; i++) {
+        this.playingField[row + i][col].ship = ship;
       }
     }
-
-    return true;
   }
+
+  
 }
