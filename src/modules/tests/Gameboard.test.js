@@ -56,3 +56,11 @@ test("sunks ship", () => {
   const ship = gameboard.playingField[0][0].ship;
   expect(ship.hasSunk).toBeTruthy();
 });
+
+test('keeps track of ships', () => {
+  const gameboard = new Gameboard(3);
+  gameboard.placeShip(2, 0, 0, true);
+  gameboard.placeShip(1, 2, 0, false);
+  gameboard.receiveAttack(2, 0);
+  expect(gameboard.amountOfShips).toBe(1);
+})
