@@ -5,7 +5,9 @@ export default function fillBoard(boardElement, gameboard) {
     const cell = document.createElement("div");
     cell.classList.add("cell");
     cell.classList.add("enemy-cell");
-    cell.addEventListener("click", hitDetector.bind(null, cell, i, gameboard));
+    cell.addEventListener("click", hitDetector.bind(null, cell, i, gameboard), {
+      once: true,
+    });
 
     boardElement.appendChild(cell);
   }
