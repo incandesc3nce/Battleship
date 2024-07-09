@@ -7,12 +7,11 @@ export default class Ship {
 
   hit() {
     this.hits += 1;
+    this.isSunk();
   }
 
   isSunk() {
     const enoughHits = this.hits === this.length;
     this.hasSunk = enoughHits;
-
-    return this.hasSunk;
   }
 }
